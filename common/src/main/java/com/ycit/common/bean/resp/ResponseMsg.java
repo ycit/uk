@@ -19,8 +19,15 @@ public class ResponseMsg<T> {
     private String msg;
     private long timestamp;
 
+    public static <T> ResponseMsg<T> ok() {
+        ResponseMsg<T> responseMsg = new ResponseMsg<>();
+        responseMsg.setCode(200);
+        responseMsg.setTimestamp(System.currentTimeMillis());
+        return responseMsg;
+    }
+
     public static <T> ResponseMsg<T> ok(List<T> results, int total) {
-        ResponseMsg<T> responseMsg = new ResponseMsg<T>();
+        ResponseMsg<T> responseMsg = new ResponseMsg<>();
         responseMsg.setResults(results);
         responseMsg.setCode(200);
         responseMsg.setTimestamp(System.currentTimeMillis());
