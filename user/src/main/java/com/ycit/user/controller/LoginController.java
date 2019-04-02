@@ -2,6 +2,7 @@ package com.ycit.user.controller;
 
 import com.ycit.common.bean.resp.ResponseMsg;
 import com.ycit.common.bean.user.criteria.UserLoginForm;
+import com.ycit.log.aop.OperationLog;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiOperation;
@@ -25,6 +26,7 @@ public class LoginController {
 
     @PostMapping("/jwt/login")
     @ApiOperation(value = "JWT 登录验证", httpMethod = "POST")
+    @OperationLog(moduleName = "用户", description = "用户登录")
     public ResponseMsg login(@Valid UserLoginForm form, BindingResult result) {
         if (result.hasErrors()) {
             String errors = result.getAllErrors()

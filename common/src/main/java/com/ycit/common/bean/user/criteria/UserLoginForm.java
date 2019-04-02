@@ -12,11 +12,10 @@ import javax.validation.constraints.NotBlank;
 @Data
 public class UserLoginForm {
 
-    private String username;
 
     @NotBlank
     private String loginName;
-    
+
     @NotBlank
     private String password;
 
