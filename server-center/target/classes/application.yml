@@ -1,13 +1,13 @@
 spring:
   application:
-    name: server-center
+    name: @server.center.app.name@
 
 server:
-  port: 8181
+  port: @server.center.port@
 
 eureka:
   instance:
-    hostname: localhost
+    hostname: @server.center.hostname@
   client:
     register-with-eureka: false
     fetch-registry: false

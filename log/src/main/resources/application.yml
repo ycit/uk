@@ -1,0 +1,12 @@
+server:
+  port: @log.server.port@
+
+spring:
+  profiles:
+    active: @env@
+  kafka:
+    bootstrap-servers: @kafka.bootstraps@
+    consumer:
+      group-id: log
+      enable-auto-commit: false
+      auto-offset-reset: earliest

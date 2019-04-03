@@ -1,3 +1,11 @@
+server:
+  port: @user.server.port@
+
 spring:
   profiles:
     active: @env@
+  kafka:
+    producer:
+      bootstrap-servers: @kafka.bootstraps@
+topic:
+  log: @topic.log@

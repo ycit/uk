@@ -1,4 +1,4 @@
-package com.ycit.log.aop;
+package com.ycit.common.aop;
 
 
 import java.lang.annotation.*;

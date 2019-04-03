@@ -1,10 +1,10 @@
 package com.ycit.user.controller;
 
+import com.ycit.common.aop.OperationLog;
 import com.ycit.common.bean.resp.ResponseMsg;
 import com.ycit.common.bean.user.criteria.UserLoginForm;
-import com.ycit.log.aop.OperationLog;
+import com.ycit.common.exception.BizException;
 import io.swagger.annotations.Api;
-import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.ObjectError;

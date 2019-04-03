@@ -1,0 +1,12 @@
+server:
+  port: 8383
+
+spring:
+  profiles:
+    active: dev
+  kafka:
+    bootstrap-servers: 11
+    consumer:
+      group-id: log
+      enable-auto-commit: false
+      auto-offset-reset: earliest

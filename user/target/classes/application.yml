@@ -1,3 +1,11 @@
+server:
+  port: 8282
+
 spring:
   profiles:
     active: dev
+  kafka:
+    producer:
+      bootstrap-servers: 11
+    template:
+      default-topic: log-topic
