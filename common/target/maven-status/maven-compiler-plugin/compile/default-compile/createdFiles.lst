@@ -1,5 +1,0 @@
-com\ycit\common\bean\user\entity\User.class
-com\ycit\common\bean\aop\OperationLog.class
-com\ycit\common\bean\resp\ResponseMsg.class
-com\ycit\common\bean\user\criteria\UserLoginForm.class
-com\ycit\common\bean\aop\LogAspect.class

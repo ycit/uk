@@ -1,4 +1,0 @@
-com\ycit\log\config\AppConfig.class
-com\ycit\log\config\KafkaConfig.class
-com\ycit\log\LogApplication.class
-com\ycit\log\service\ConstantService.class
