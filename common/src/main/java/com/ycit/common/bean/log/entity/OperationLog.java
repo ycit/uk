@@ -8,6 +8,6 @@ package com.ycit.common.bean.log.entity;
  */
 public class OperationLog {
 
-    private 
+//    private
 
 }

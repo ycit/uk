@@ -14,7 +14,7 @@ public class UserLoginForm {
 
 
     @NotBlank
-    private String loginName;
+    private String username;
 
     @NotBlank
     private String password;

@@ -8,7 +8,6 @@ import io.swagger.annotations.ApiOperation;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.ObjectError;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.validation.Valid;
@@ -33,6 +32,7 @@ public class LoginController {
                     .stream().map(ObjectError::getDefaultMessage).collect(Collectors.toList()).toString();
             return ResponseMsg.error(400, errors);
         }
+
         return ResponseMsg.ok();
     }
 

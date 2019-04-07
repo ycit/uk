@@ -14,7 +14,7 @@ import java.sql.Date;
 public class BaseEntity {
 
     private Long id;
-    private String code;
+    private String no;
     private Date createTime;
     private Date endTime;
     private Integer version;

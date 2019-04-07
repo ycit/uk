@@ -8,7 +8,6 @@ package com.ycit.user.util;
  */
 public class Constants {
 
-    public static final long TOKEN_EXPIRATION_SECOND = 30*60*60;
-    public static final String TOKEN_SIGN_KEY = "xiaoruixi";
+
 
 }

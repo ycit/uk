@@ -39,7 +39,7 @@ public class LogAspect {
         String controller = joinPoint.getTarget().getClass().getSimpleName();
         String method = joinPoint.getSignature().getName();
         log.debug("the method {}.{} run...", controller, method);
-        kafkaTemplate.send(constantService.getLogTopic());
+//        kafkaTemplate.send(constantService.getLogTopic());
         return joinPoint.proceed();
     }
 
