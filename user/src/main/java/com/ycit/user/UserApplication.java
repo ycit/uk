@@ -13,8 +13,7 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
  */
 @EnableSwagger2
 @EnableAspectJAutoProxy
-@SpringBootApplication(scanBasePackages = {"com.ycit.common.config",
-        "com.ycit.user.controller","com.ycit.user.service"})
+@SpringBootApplication
 public class UserApplication {
 
     public static void main(String[] args) {

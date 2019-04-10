@@ -22,7 +22,8 @@ public class LoginService {
     public void login(UserLoginForm form) {
         User user = userService.findByUsername(form.getUsername());
         if (form.getPassword().equals(user.getPassword())) {
-            String token = JwtUtil.generateToken(user.getUsername());
+            String token = JwtUtil.generateJWT(user.getUsername());
+//            JedisUtil.getInstance()
         }
     }
 

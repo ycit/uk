@@ -23,6 +23,7 @@ public class Constant {
     public static int REDIS_RETRY_NUM = 5;
 
     public static final long TOKEN_EXPIRATION_SECOND = 30*60*60;
-    public static final String TOKEN_SIGN_KEY = "xiaoruixi";
+//    public static final String TOKEN_SIGN_KEY = "xiaoruixisssddwdwsawsdwwqqqqwdadwfadqfwasdafwafsddddddddddddddddddddddddddddd";
+    public static final String TOKEN_SIGN_KEY = "mzIHYyThEF3XsCwPFgvA/+ncdbTQWoVFM+AgZ6BJ3FE=";
 
 }
