@@ -32,6 +32,7 @@
         <mybatis-spring.version>2.0.0</mybatis-spring.version>
         <spring-kafka.version>2.2.4.RELEASE</spring-kafka.version>
         <jedis.version>3.0.1</jedis.version>
+        <common-lang3.version>3.8.1</common-lang3.version>
     </properties>
 
     <parent>
@@ -138,6 +139,11 @@
                 <groupId>redis.clients</groupId>
                 <artifactId>jedis</artifactId>
                 <version>${jedis.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.commons</groupId>
+                <artifactId>commons-lang3</artifactId>
+                <version>${common-lang3.version}</version>
             </dependency>
 
         </dependencies>

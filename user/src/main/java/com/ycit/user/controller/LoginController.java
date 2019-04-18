@@ -1,8 +1,10 @@
 package com.ycit.user.controller;
 
+import com.google.common.collect.ImmutableList;
 import com.ycit.common.aop.OperationLog;
 import com.ycit.common.bean.resp.ResponseMsg;
 import com.ycit.common.bean.user.criteria.UserLoginForm;
+import com.ycit.user.bean.dto.AuthToken;
 import com.ycit.user.service.LoginService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
@@ -37,8 +39,11 @@ public class LoginController {
                     .stream().map(ObjectError::getDefaultMessage).collect(Collectors.toList()).toString();
             return ResponseMsg.error(400, errors);
         }
-
-        return ResponseMsg.ok();
+        AuthToken authToken = loginService.login(form);
+        if (authToken != null) {
+            return ResponseMsg.ok(ImmutableList.of(authToken), 1);
+        }
+        return ResponseMsg.error(401, "登录失败");
     }
 
 }

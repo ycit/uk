@@ -6,8 +6,8 @@ package com.ycit.user.util;
  * @author uk
  * 2019/3/31 17:20
  */
-public class Constants {
+public final class Constants {
 
-
+    public static final String HEADER_TOKEN = "Authorization";
 
 }

@@ -5,6 +5,7 @@ import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
 import io.jsonwebtoken.io.Encoders;
 import io.jsonwebtoken.security.Keys;
+import lombok.extern.slf4j.Slf4j;
 
 import javax.crypto.spec.SecretKeySpec;
 import javax.xml.bind.DatatypeConverter;
@@ -43,6 +44,7 @@ import java.util.Date;
  * @author uk
  * 2019/3/31 17:06
  */
+@Slf4j
 public class JwtUtil {
 
     public static String generateJWT(String subject) {
@@ -61,7 +63,7 @@ public class JwtUtil {
                 //签发人
                 .setIssuer("http://www.uk.com")
                 //有效期
-                .setExpiration(new Date(System.currentTimeMillis() + Constant.TOKEN_EXPIRATION_SECOND))
+                .setExpiration(new Date(System.currentTimeMillis() + Constant.TOKEN_EXPIRATION_MS))
                 //签名
                 .signWith(signingKey, signatureAlgorithm)
                 .compact();
@@ -71,11 +73,15 @@ public class JwtUtil {
         Claims claims = Jwts.parser()
                 .setSigningKey(DatatypeConverter.parseBase64Binary(Constant.TOKEN_SIGN_KEY))
                 .parseClaimsJws(jwt).getBody();
-        System.out.println("ID: " + claims.getId());
-        System.out.println("Subject: " + claims.getSubject());
-        System.out.println("Issuer: " + claims.getIssuer());
-        System.out.println("Expiration: " + claims.getExpiration());
-        System.out.println(claims.toString());
+        log.debug("parse result is {}", claims.toString());
+    }
+
+    public static String getUsernameByToken(String token) {
+        Claims claims = Jwts.parser()
+                .setSigningKey(DatatypeConverter.parseBase64Binary(Constant.TOKEN_SIGN_KEY))
+                .parseClaimsJws(token).getBody();
+        log.debug("parse result is {}", claims.toString());
+        return claims.getSubject();
     }
 
     private static String generateApiKey() {
@@ -87,6 +93,7 @@ public class JwtUtil {
     public static void main(String[] args) throws Exception {
         String apiKey =  generateApiKey();
         System.out.println("base 64 is : " + apiKey);
+        Thread.sleep(1000);
         String jwt = generateJWT("xlch");
         System.out.println("jwt is:  " + jwt);
         parseJWT(jwt);
