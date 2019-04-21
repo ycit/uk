@@ -1,4 +1,4 @@
-package com.ycit.common.config;
+package com.ycit.common.web;
 
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
@@ -12,6 +12,6 @@ import org.springframework.kafka.annotation.EnableKafka;
  */
 @Configuration
 @EnableKafka
-@ComponentScan(basePackages = {"com.ycit.common.web"})
-public class CommonConfig {
+@ComponentScan
+public class CommonAutoConfig {
 }

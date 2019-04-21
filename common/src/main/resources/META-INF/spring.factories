@@ -1,2 +1,2 @@
 org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
-com.ycit.common.config.CommonConfig
+com.ycit.common.web.CommonAutoConfig

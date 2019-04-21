@@ -30,7 +30,7 @@ public class JwtTest {
         assert true:"true";
     }
 
-    @Test
+//    @Test
     public void custom() {
         Key key = Keys.secretKeyFor(SignatureAlgorithm.HS512);
         Map<String, Object> claims = new HashMap<>();

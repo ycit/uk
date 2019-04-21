@@ -1,7 +1,7 @@
 package com.ycit.user.controller;
 
 import com.google.common.collect.ImmutableList;
-import com.ycit.common.aop.OperationLog;
+import com.ycit.common.annotation.DoLog;
 import com.ycit.common.bean.resp.ResponseMsg;
 import com.ycit.common.bean.user.criteria.UserLoginForm;
 import com.ycit.user.bean.dto.AuthToken;
@@ -32,7 +32,7 @@ public class LoginController {
 
     @PostMapping("/jwt/login")
     @ApiOperation(value = "JWT 登录验证", httpMethod = "POST")
-    @OperationLog(moduleName = "用户", description = "用户登录")
+    @DoLog(moduleName = "用户", description = "用户登录", method = "post")
     public ResponseMsg login(@Valid UserLoginForm form, BindingResult result) {
         if (result.hasErrors()) {
             String errors = result.getAllErrors()

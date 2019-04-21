@@ -1,7 +1,6 @@
 package com.ycit.log.config;
 
 import com.ycit.log.service.ConstantService;
-import org.apache.kafka.clients.consumer.ConsumerConfig;
 import org.springframework.context.annotation.Bean;
 import org.springframework.kafka.config.ConcurrentKafkaListenerContainerFactory;
 import org.springframework.kafka.core.ConsumerFactory;
@@ -40,7 +39,7 @@ public class KafkaConfig {
     @Bean
     public Map<String, Object> consumerConfigs() {
         Map<String, Object> consumerConfigs = new HashMap<>(5);
-        consumerConfigs.put(ConsumerConfig.BOOTSTRAP_SERVERS_CONFIG, constantService.getKafkaBootStraps());
+//        consumerConfigs.put(ConsumerConfig.BOOTSTRAP_SERVERS_CONFIG, constantService.getKafkaBootStraps());
         return consumerConfigs;
     }
 
