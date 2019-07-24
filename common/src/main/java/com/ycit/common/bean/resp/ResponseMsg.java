@@ -30,6 +30,7 @@ public class ResponseMsg<T> {
         ResponseMsg<T> responseMsg = new ResponseMsg<>();
         responseMsg.setResults(results);
         responseMsg.setCode(200);
+        responseMsg.setTotal(total);
         responseMsg.setTimestamp(System.currentTimeMillis());
         return responseMsg;
     }

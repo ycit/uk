@@ -1,11 +1,11 @@
-package com.ycit.common.web.aop;
+package com.ycit.log.aop;
 
-import com.ycit.common.annotation.DoLog;
 import com.ycit.common.bean.log.entity.OperationLog;
 import com.ycit.common.bean.resp.ResponseMsg;
 import com.ycit.common.exception.BizException;
 import com.ycit.common.util.JsonUtil;
-import com.ycit.common.web.service.ConstantService;
+import com.ycit.log.annotation.DoLog;
+import com.ycit.log.service.ConstantService;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.kafka.clients.producer.ProducerRecord;
 import org.aspectj.lang.ProceedingJoinPoint;
@@ -36,7 +36,7 @@ public class LogAspect {
     @Resource
     private KafkaTemplate<String, String> kafkaTemplate;
 
-    @Pointcut(value = "@annotation(com.ycit.common.annotation.DoLog)")
+    @Pointcut(value = "@annotation(com.ycit.log.annotation.DoLog)")
     public void pointcut() {
     }
 
@@ -47,7 +47,6 @@ public class LogAspect {
         log.debug("the method {}.{} run...", controller, method);
         Object[] args = joinPoint.getArgs();
         String kind = joinPoint.getKind();
-
         String arg = args.toString();
         Object object = null;
         try {
@@ -67,7 +66,7 @@ public class LogAspect {
             }
             OperationLog operationLog = OperationLog.builder()
                     .logNo("111").moduleName(doLog.moduleName())
-                    .description(doLog.description()).isSuccess(isSuccess)
+                    .description(doLog.description()).isSuccess(isSuccess).errorReason(errorReason)
                     .reqMethod(doLog.method()).reqParams("").build();
             ProducerRecord<String, String> record = new ProducerRecord<>("log", 0, "log", JsonUtil.objects2Json(operationLog));
 //            ProducerRecord<String, String> record = new ProducerRecord<>("log", 1, "log", JsonUtil.objects2Json(operationLog));
