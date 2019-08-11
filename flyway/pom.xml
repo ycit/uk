@@ -12,7 +12,7 @@
     <artifactId>flyway</artifactId>
 
     <properties>
-        <db.url>jdbc:mysql://localhost:3306/uk</db.url>
+        <db.url>jdbc:mysql://localhost:3306/uk?useSSL=false&amp;serverTimezone=UTC</db.url>
         <db.username>root</db.username>
         <db.password>root</db.password>
     </properties>
@@ -35,11 +35,22 @@
                 <groupId>org.flywaydb</groupId>
                 <artifactId>flyway-maven-plugin</artifactId>
                 <version>5.2.4</version>
-                <configuration>
-                    <url>${db.url}</url>
-                    <user>${db.username}</user>
-                    <password>${db.password}</password>
-                </configuration>
+                <executions>
+                    <execution>
+                        <id>localhost</id>
+                        <phase>compile</phase>
+                        <goals>
+                            <goal>info</goal>
+                            <goal>repair</goal>
+                            <goal>migrate</goal>
+                        </goals>
+                        <configuration>
+                            <url>${db.url}</url>
+                            <user>${db.username}</user>
+                            <password>${db.password}</password>
+                        </configuration>
+                    </execution>
+                </executions>
             </plugin>
         </plugins>
     </build>
