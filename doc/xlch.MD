@@ -23,14 +23,14 @@
 视频设备的综合应用平台。负责主要模块的后端业务开发；公共组件的开发；
 消息中心组件开发，提供统一的消息提醒功能；设计思路：kafka 消息接收，数据处理，websocket 前端通知；
 负责生产地区的项目管理工作，项目部署，问题搜集反馈，进度跟进；
-后端项目架构：Spring boot + spring data jpa  + kafka + mysql
+基于 RESTful前后端分离，后端项目架构：Spring boot + spring data jpa  + kafka + mysql
 
 ## 苏州正载信息技术有限公司（ 2016年3月 ~ 2018年11月 ）
 
 ### 预测警务系统
 基于 pc web 端 和 手机 html5 端的警务人员预测、巡防系统；
 需求分析，数据库设计，独立负责后端 RESTful api开发，mock 单元测试，jekins 项目部署，代码规范pmd，checkstyle，findbugs， sonar；
-后端项目架构：spring boot + mybatis + shiro  + oracle
+基于 RESTful前后端分离，后端项目架构：spring boot + mybatis + shiro  + oracle
 
 ### 重点人员再犯罪风险预测系统 
 基于重点人员各类大数据进行分析，统计，展示，预测；
@@ -44,9 +44,7 @@
 ### 微网站
 基于企业微信打造的微网店，实现 活动管理，会员管理，商城管理等，为每个公司实现一键建站；
 主要负责活动模块的前后台开发：诸如砸金蛋，刮刮卡，大转盘，智力答题等活动；
-技术架构：spring + spring mvc + jpa + mysql + jsp
-QPS 低的时候 直接 代码加锁，数据库直接读取；
-后期考虑到可能遇到的 高 QPS，使用 reids ;
+技术架构：spring + spring mvc + jpa + mysql
 
 
 
