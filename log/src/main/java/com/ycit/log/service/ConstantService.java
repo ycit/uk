@@ -1,6 +1,7 @@
 package com.ycit.log.service;
 
 import lombok.Data;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
 /**
@@ -16,4 +17,6 @@ public class ConstantService {
 //    @Value("${kafka.bootstraps}")
 //    private String kafkaBootStraps;
 
+    @Value("${topic.log}")
+    private String logTopic;
 }
