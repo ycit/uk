@@ -1,9 +1,9 @@
 package com.ycit.user.controller;
 
 import com.google.common.collect.ImmutableList;
-import com.ycit.common.annotation.DoLog;
 import com.ycit.common.bean.resp.ResponseMsg;
 import com.ycit.common.bean.user.criteria.UserLoginForm;
+import com.ycit.log.annotation.DoLog;
 import com.ycit.user.bean.dto.AuthToken;
 import com.ycit.user.service.LoginService;
 import io.swagger.annotations.Api;
